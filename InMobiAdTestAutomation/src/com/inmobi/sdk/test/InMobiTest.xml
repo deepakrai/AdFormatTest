@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ad>
+	<Configs>
+		<AdNetwork>{ad_network}</AdNetwork>
+		<AdUrl>{creative_url}</AdUrl>
+		<AdType>{creative_type}</AdType>
+		<AdHeight>{creative_height}</AdHeight>
+		<AdWidth>{creative_width}</AdWidth>
+		<ExpandableAdHeight>{cretive_expanded_height}</ExpandableAdHeight> <!-- Only for CTR and Expandable -->
+		<ExpandableAdWidth>{cretive_expanded_width}</ExpandableAdWidth> <!-- Only for CTR and Expandable -->
+		<ExpandableAdFile>{file_of_landing_page}</ExpandableAdFile> <!-- Only for CTR and Expandable -->
+		<AdPages>{no_of_pages_in_main_creative}</AdPages> <!-- excluding landing page of expandable and CTR -->
+		<AdMainFile>{file_name}</AdMainFile>
+	</Configs>
+</Ad>
