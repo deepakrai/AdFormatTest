@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TestSuite>
-	<Testcase id="TestCase1">
+	<TestCase id="T1">
 		<SDK>370</SDK>
 		<AndroidOS>2.3.3</AndroidOS>
 		<AdType>RM</AdType>
 		<CTA>OpenLink</CTA>
 		<CTA_URL>http://google.com</CTA_URL>
-	</Testcase>
-	
-	<Testcase  id="TestCase2">
+	</TestCase>
+	<TestCase id="T2">
+		<SDK>370</SDK>
+		<AndroidOS>2.3.4</AndroidOS>
+		<AdType>RM</AdType>
+		<CTA>OpenLink</CTA>
+		<CTA_URL>http://google.com</CTA_URL>
+	</TestCase>
+	<TestCase id="T3">
 		<SDK>370</SDK>
 		<AndroidOS>2.3.5</AndroidOS>
 		<AdType>RM</AdType>
 		<CTA>OpenLink</CTA>
 		<CTA_URL>http://google.com</CTA_URL>
-	</Testcase>
+	</TestCase>
 </TestSuite>

@@ -3,6 +3,14 @@ package com.inmobi.sdk.test.config;
 public enum TestCaseTags {
 	
 	TestCase("TestCase"),
+	SDK("SDK"),
+	AndroidOS("AndroidOS"),
+	AdType("AdType"),
+	CTA("CTA"),
+	CTA_URL("CTA_URL"),
+	Ad("Ad"),
+		
+		
 	TestCaseFileName("TestCaseFileName"),
 	
 	Configs("Configs"),

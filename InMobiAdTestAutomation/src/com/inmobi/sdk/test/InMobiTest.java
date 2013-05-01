@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.android.AndroidWebDriver;
+
+import com.inmobi.sdk.test.config.TestCaseTags;
 import com.inmobi.sdk.test.helper.ReadTestcase;
+import com.inmobi.sdk.test.helper.TestCaseData;
+import com.inmobi.sdk.test.helper.TestCaseListData;
 //import org.openqa.selenium.android.AndroidDriver;
 //import org.openqa.selenium.android.AndroidWebDriver;
 //
@@ -21,6 +25,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
 import android.view.KeyEvent;
 
+@SuppressWarnings("rawtypes")
 public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 	
 	private static String TARGET_PACKAGE_ID = "com.inmobi.sample370";
@@ -38,6 +43,7 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 	static {
 		try {
 			//Log.d("**** ROBO ****", "Static class");
+			
 			launcherClass = Class.forName(LAUNCHER_ACTIVITY_NAME);
 			
 		} catch (ClassNotFoundException e) {
@@ -57,6 +63,7 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 
 	private Solo solo;
 
+	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		//Log.d("**** ROBO ****", "setup");
@@ -71,10 +78,45 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
             Log.d("testcase firstrun", "firstrun");
             testcaseIndex++;
         }
+		Log.d("TestCaseTags.TestCase.getName() : " , TestCaseTags.TestCase.getName().toString());
 		
 //		SproutXMLParser sp = new SproutXMLParser();
 //		sp.readXMLData("Sprout_td_template_1.xml");
-//		ReadTestcase.readXMLData("sprout_td_template_11.xml");
+		ReadTestcase readTestCase = new ReadTestcase();
+		TestCaseListData test = readTestCase.readXMLData("TestCase1.xml");
+//		readTestCase.readXMLData("InMobiTest.xml");
+		
+		Log.d("test.getTestcaseCount()", test.getTestcaseCount().toString());
+//		Log.d("test.getTestcaseCount()", test.getTestcaseCount());
+		test.resetIndex();
+		TestCaseData td1 =  test.getTestcaseDataFromMap(0);
+		
+//		Log.d("td1.getAdType()", td1.getAdType());
+		Log.d("td1222.getAdType()", td1.getAndroidOS());
+		Log.d("td1.getCta()", td1.getCta());
+		Log.d("td1.getCta_url()", td1.getCta_url());
+		Log.d("td1.getId()", td1.getId());
+		Log.d("td1.getSdk()", td1.getSdk());
+		
+		
+		td1 =  test.getTestcaseDataFromMap(1);
+		
+		Log.d("td1.getAdType()", td1.getAdType());
+		Log.d("td1.getAdType()", td1.getAndroidOS());
+		Log.d("td1.getCta()", td1.getCta());
+		Log.d("td1.getCta_url()", td1.getCta_url());
+		Log.d("td1.getId()", td1.getId());
+		Log.d("td1.getSdk()", td1.getSdk());
+		
+		td1 =  test.getTestcaseDataFromMap(2);
+		
+		Log.d("td1.getAdType()", td1.getAdType());
+		Log.d("td1.getAdType()", td1.getAndroidOS());
+		Log.d("td1.getCta()", td1.getCta());
+		Log.d("td1.getCta_url()", td1.getCta_url());
+		Log.d("td1.getId()", td1.getId());
+		Log.d("td1.getSdk()", td1.getSdk());
+		
 		
 	}
 	
@@ -96,10 +138,10 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 		solo.clickOnText("appid");
 		Thread.sleep(5000);
 		solo.takeScreenshot();
-		solo.clickOnText("Load Interstitial");
-		Thread.sleep(30000);
-		solo.takeScreenshot();
-		Thread.sleep(5000);
+//		solo.clickOnText("Load Interstitial");
+//		Thread.sleep(30000);
+//		solo.takeScreenshot();
+//		Thread.sleep(30000);
 		
 		
 //		SproutXMLParser sp = new SproutXMLParser();

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestSuite>
+	<TestCase id="T1">
+		<TestCaseFileName>sprout_td_template_1.xml</TestCaseFileName>
+	</TestCase>
+	<TestCase id="T2">
+		<TestCaseFileName>sprout_td_template_Interstitial.xml</TestCaseFileName>
+	</TestCase>
+	<TestCase id="T3">
+		<TestCaseFileName>sprout_td_template_Expandable.xml</TestCaseFileName>
+	</TestCase>
+</TestSuite>
