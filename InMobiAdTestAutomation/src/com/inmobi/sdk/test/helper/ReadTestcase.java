@@ -182,6 +182,8 @@ public class ReadTestcase {
 			testCaseData.setCta(readText(parser));
 		} else if (tagName.equalsIgnoreCase(TestCaseTags.CTA_URL.getName())) {
 			testCaseData.setCta_url(readText(parser));
+		} else if (tagName.equalsIgnoreCase(TestCaseTags.AdUrl.getName())) {
+			testCaseData.setAdUrl(readText(parser));
 		}
 
 	}

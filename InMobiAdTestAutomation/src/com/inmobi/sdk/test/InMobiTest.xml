@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TestSuite>
-	<Testcase id="TestCase1">
+	<TestCase id="Test_1">
 		<SDK>370</SDK>
 		<AndroidOS>2.3.3</AndroidOS>
 		<AdType>RM</AdType>
+		<AdUrl>http://radish.sproutbuilder.com/qa/inmobi-redirect/blr-qa/blr-qa-Android-2.1-Micromax-A60.php</AdUrl>
 		<CTA>OpenLink</CTA>
 		<CTA_URL>http://google.com</CTA_URL>
-	</Testcase>
-	
-	<Testcase  id="TestCase2">
+	</TestCase>
+	<TestCase id="Test_2">
+		<SDK>370</SDK>
+		<AndroidOS>2.3.4</AndroidOS>
+		<AdType>RM</AdType>
+		<CTA>OpenLink</CTA>
+		<CTA_URL>http://google.com</CTA_URL>
+		<AdUrl>http://radish.sproutbuilder.com/qa/inmobi-redirect/blr-qa/blr-qa-Android-4.0.3-Samsung.php</AdUrl>
+	</TestCase>
+	<TestCase id="Test_3">
 		<SDK>370</SDK>
 		<AndroidOS>2.3.5</AndroidOS>
 		<AdType>RM</AdType>
 		<CTA>OpenLink</CTA>
 		<CTA_URL>http://google.com</CTA_URL>
-	</Testcase>
+		<AdUrl></AdUrl>
+	</TestCase>
 </TestSuite>

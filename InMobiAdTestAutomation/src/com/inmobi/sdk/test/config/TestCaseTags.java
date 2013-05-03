@@ -9,6 +9,7 @@ public enum TestCaseTags {
 	CTA("CTA"),
 	CTA_URL("CTA_URL"),
 	Ad("Ad"),
+	AdUrl("AdUrl"),
 		
 		
 	TestCaseFileName("TestCaseFileName"),

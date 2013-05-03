@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Ad>
-	<Configs>
-		<AdNetwork>{ad_network}</AdNetwork>
-		<AdUrl>{creative_url}</AdUrl>
-		<AdType>{creative_type}</AdType>
-		<AdHeight>{creative_height}</AdHeight>
-		<AdWidth>{creative_width}</AdWidth>
-		<ExpandableAdHeight>{cretive_expanded_height}</ExpandableAdHeight> <!-- Only for CTR and Expandable -->
-		<ExpandableAdWidth>{cretive_expanded_width}</ExpandableAdWidth> <!-- Only for CTR and Expandable -->
-		<ExpandableAdFile>{file_of_landing_page}</ExpandableAdFile> <!-- Only for CTR and Expandable -->
-		<AdPages>{no_of_pages_in_main_creative}</AdPages> <!-- excluding landing page of expandable and CTR -->
-		<AdMainFile>{file_name}</AdMainFile>
-	</Configs>
-</Ad>
+<TestSuite>
+	<TestCase id="Test_1">
+		<SDK>370</SDK>
+		<AndroidOS>2.3.3</AndroidOS>
+		<AdType>RM</AdType>
+		<AdUrl>http://radish.sproutbuilder.com/qa/inmobi-redirect/blr-qa/blr-qa-Android-2.1-Micromax-A60.php</AdUrl>
+		<CTA>OpenLink</CTA>
+		<CTA_URL>http://google.com</CTA_URL>
+	</TestCase>
+	<TestCase id="Test_2">
+		<SDK>370</SDK>
+		<AndroidOS>2.3.4</AndroidOS>
+		<AdType>RM</AdType>
+		<CTA>OpenLink</CTA>
+		<CTA_URL>http://google.com</CTA_URL>
+		<AdUrl>http://radish.sproutbuilder.com/qa/inmobi-redirect/blr-qa/blr-qa-Android-4.0.3-Samsung.php</AdUrl>
+	</TestCase>
+	<TestCase id="Test_3">
+		<SDK>370</SDK>
+		<AndroidOS>2.3.5</AndroidOS>
+		<AdType>RM</AdType>
+		<CTA>OpenLink</CTA>
+		<CTA_URL>http://google.com</CTA_URL>
+		<AdUrl></AdUrl>
+	</TestCase>
+</TestSuite>

@@ -37,6 +37,7 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 	
 	private static boolean firstRun = true;
 	private static int testcaseIndex = -1;
+	TestCaseListData testCaseListData ;
 	
 	private static Context myApp;  
 	
@@ -83,13 +84,13 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 //		SproutXMLParser sp = new SproutXMLParser();
 //		sp.readXMLData("Sprout_td_template_1.xml");
 		ReadTestcase readTestCase = new ReadTestcase();
-		TestCaseListData test = readTestCase.readXMLData("TestCase1.xml");
+		testCaseListData = readTestCase.readXMLData("InMobiTest.xml");
 //		readTestCase.readXMLData("InMobiTest.xml");
 		
-		Log.d("test.getTestcaseCount()", test.getTestcaseCount().toString());
+		Log.d("test.getTestcaseCount()", testCaseListData.getTestcaseCount().toString());
 //		Log.d("test.getTestcaseCount()", test.getTestcaseCount());
-		test.resetIndex();
-		TestCaseData td1 =  test.getTestcaseDataFromMap(0);
+		testCaseListData.resetIndex();
+		TestCaseData td1 =  testCaseListData.getTestcaseDataFromMap(0);
 		
 //		Log.d("td1.getAdType()", td1.getAdType());
 		Log.d("td1222.getAdType()", td1.getAndroidOS());
@@ -99,7 +100,7 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 		Log.d("td1.getSdk()", td1.getSdk());
 		
 		
-		td1 =  test.getTestcaseDataFromMap(1);
+		td1 =  testCaseListData.getTestcaseDataFromMap(1);
 		
 		Log.d("td1.getAdType()", td1.getAdType());
 		Log.d("td1.getAdType()", td1.getAndroidOS());
@@ -108,7 +109,7 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 		Log.d("td1.getId()", td1.getId());
 		Log.d("td1.getSdk()", td1.getSdk());
 		
-		td1 =  test.getTestcaseDataFromMap(2);
+		td1 =  testCaseListData.getTestcaseDataFromMap(2);
 		
 		Log.d("td1.getAdType()", td1.getAdType());
 		Log.d("td1.getAdType()", td1.getAndroidOS());
@@ -120,70 +121,61 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 		
 	}
 	
-	
-//	public TestcaseData getTestcase() throws Exception {
-////		SproutXMLParser sp = new SproutXMLParser();
-////		
-////		TestcaseListData testcaseList =  sp.readTestCaseList( "TestCase.xml");
-////		
-////		testcaseList.setTestcaseIndex(testcaseIndex);
-////		TestcaseData testcaseData1 = (TestcaseData) testcaseList.getTestcaseDataFromMap();
-////		testcaseIndex++;
-////		return testcaseData1;
-//	}
-	
+
 	
 	public void test_1() throws Exception {
 		
+		
+		TestCaseData testCaseData =  testCaseListData.getTestcaseDataFromMap(0);
+		
+		String testCaseName = testCaseData.getId();
+		
 		solo.clickOnText("appid");
 		Thread.sleep(5000);
-		solo.takeScreenshot();
-//		solo.clickOnText("Load Interstitial");
-//		Thread.sleep(30000);
-//		solo.takeScreenshot();
-//		Thread.sleep(30000);
+		solo.takeScreenshot(testCaseName + "_A");
+		solo.clearEditText(0);
+		solo.enterText(0, testCaseData.getAdUrl());
+		solo.clickOnText("Load Banner");
+		Thread.sleep(10000);
+		solo.takeScreenshot(testCaseName + "_B");
+		Thread.sleep(15000);
+		solo.takeScreenshot(testCaseName + "_C");
+		solo.clickOnScreen(100, 100);
+		Thread.sleep(35000);
+		solo.takeScreenshot(testCaseName + "_D");
+		
+		}
 		
 		
-//		SproutXMLParser sp = new SproutXMLParser();
-//		
-//		TestcaseData testcaseData1 = getTestcase();
-//		sp.readXMLData( testcaseData1.getTestcasefileName());
-//		
-//		Log.d("TestCaseInfo" ,testcaseData1.getTestcaseId() + " - " + testcaseData1.getTestcasefileName());
-//		
-//		
-//		//solo.takeScreenshot("ss1");
-//		solo.clickOnText("InMobi Ad Testing");
-//		Thread.sleep(5000);
-//		//solo.takeScreenshot("ss2");
-//		//solo.assertCurrentActivity("Activity not found.", expectedClass)
-//		solo.clickOnText("Get Interstitial Ad");
-//		Thread.sleep(10000);
-//		solo.clickOnText("Show Interstitial Ad");
-//		Thread.sleep(2000);
-//		//solo.takeScreenshot("ss3");
-//		/*WebView wv = null;
-//		ArrayList<View> views = solo.getCurrentViews();
-//		for(View v : views) {
-//			if(v instanceof WebView) {
-//				wv = (WebView) v;
-//				//break;
-//			}
-//		}*/
-//		
-//		WebDriver driver = new AndroidWebDriver(mActivity);
-//		driver.get("http://farm.sproutbuilder.com/load/oACpFexNOYE086Y7.inmobi.w.review.html");
-//		WebElement webElement = driver.findElement(By.tagName("iframe"));
-//		driver.switchTo().frame(webElement.getAttribute("id"));
-//		webElement = driver.findElement(By.xpath("//span[text()='GOTO URL http://www.google.co.in/']"));
-//		webElement.click();
-//		
-//		//solo.takeScreenshot("ss4");
-//		Thread.sleep(2000);
-//		
-//		Thread.sleep(5000);
-//		inst.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK);
-	}
-	
+		
+
+		protected void tearDown() throws Exception {
+			solo.finishOpenedActivities();
+		  }
+			
+	public void test_2() throws Exception {
+		
+		TestCaseData testCaseData =  testCaseListData.getTestcaseDataFromMap(1);
+		
+		String testCaseName = testCaseData.getId();
+		
+			solo.clickOnText("appid");
+			Thread.sleep(10000);
+			solo.takeScreenshot(testCaseName + "_A");
+			solo.clearEditText(0);
+			solo.enterText(0, testCaseData.getAdUrl());
+			solo.clickOnText("Load Interstitial");
+			Thread.sleep(30000);
+			solo.takeScreenshot(testCaseName + "_B");
+			Thread.sleep(55000);
+			solo.takeScreenshot(testCaseName +"_C");
+			solo.clickOnScreen(200, 200);
+			Thread.sleep(35000);
+			solo.takeScreenshot(testCaseName +"_D");
+			
+		}
+
+		
+		
 
 }

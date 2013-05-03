@@ -8,6 +8,7 @@ public class TestCaseData {
 	private String adType;
 	private String cta;
 	private String cta_url;
+	private String adUrl;
 	
 
 	
@@ -85,6 +86,18 @@ public class TestCaseData {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+
+
+	public String getAdUrl() {
+		return adUrl;
+	}
+
+
+
+	public void setAdUrl(String adUrl) {
+		this.adUrl = adUrl;
 	}
 
 
