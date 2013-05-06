@@ -133,13 +133,17 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 		
 		String testCaseName = testCaseData.getId();
 		
+		solo.waitForText("appid");
 		solo.clickOnText("appid");
-		Thread.sleep(5000);
+//		Thread.sleep(5000);
 		solo.takeScreenshot(testCaseName + "_A");
+//		Thread.sleep(5000);
+		solo.waitForText("Load Banner");
 		solo.clearEditText(0);
 		solo.enterText(0, testCaseData.getAdUrl());
 		solo.clickOnText("Load Banner");
-		Thread.sleep(10000);
+//		Thread.sleep(10000);
+		solo.waitForText("Refresh Ad");
 		solo.takeScreenshot(testCaseName + "_B");
 		Thread.sleep(35000);
 		solo.takeScreenshot(testCaseName + "_C");
@@ -206,7 +210,40 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 
 		}
 
+	 public void test_3() throws Exception {
+			
+			TestCaseData testCaseData =  testCaseListData.getTestcaseDataFromMap(2);
+			
+			String testCaseName = testCaseData.getId();
+			
+			solo.clickOnText("appid");
+			Thread.sleep(5000);
+			solo.takeScreenshot(testCaseName + "_A");
+			solo.clearEditText(0);
+			solo.enterText(0, testCaseData.getAdUrl());
+			solo.clickOnText("Load Banner");
+			Thread.sleep(10000);
+			solo.takeScreenshot(testCaseName + "_B");
+			Thread.sleep(15000);
+			solo.takeScreenshot(testCaseName + "_C");
+			solo.clickOnScreen(366, 314);
+			Thread.sleep(35000);
+			solo.takeScreenshot(testCaseName + "_D");
+			Thread.sleep(10000);
+			solo.clickOnScreen(366, 314);
+			Thread.sleep(35000);
+			solo.takeScreenshot(testCaseName + "_E");
+//			FileReadWrite.writeToSDFile("b",true);
+			
+			FileReadWrite.writeToSDFile(testCaseName + ";" + 
+										testCaseName + "_A" + ";" +
+										testCaseName + "_B" + ";" +
+										testCaseName + "_C" + ";" +
+										testCaseName + "_D" + ";" +
+										testCaseName + "_E" + ";",true);
+
 		
+	}
 		
 
 }

@@ -24,4 +24,12 @@
 		<CTA_URL>http://google.com</CTA_URL>
 		<AdUrl></AdUrl>
 	</TestCase>
+	<TestCase id="Test_3">
+		<SDK>370</SDK>
+		<AndroidOS>2.3.5</AndroidOS>
+		<AdType>RM</AdType>
+		<CTA>OpenLink</CTA>
+		<CTA_URL>http://google.com</CTA_URL>
+		<AdUrl>http://radish.sproutbuilder.com/qa/a.html</AdUrl>
+	</TestCase>	
 </TestSuite>
