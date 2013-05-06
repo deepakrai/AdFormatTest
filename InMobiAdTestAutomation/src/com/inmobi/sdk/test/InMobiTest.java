@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.android.AndroidWebDriver;
 
 import com.inmobi.sdk.test.config.TestCaseTags;
+import com.inmobi.sdk.test.helper.FileReadWrite;
 import com.inmobi.sdk.test.helper.ReadTestcase;
 import com.inmobi.sdk.test.helper.TestCaseData;
 import com.inmobi.sdk.test.helper.TestCaseListData;
@@ -118,6 +119,8 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 		Log.d("td1.getId()", td1.getId());
 		Log.d("td1.getSdk()", td1.getSdk());
 		
+//		FileReadWrite.writeToSDFile("a", false);
+		
 		
 	}
 	
@@ -140,9 +143,21 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 		solo.takeScreenshot(testCaseName + "_B");
 		Thread.sleep(15000);
 		solo.takeScreenshot(testCaseName + "_C");
-		solo.clickOnScreen(100, 100);
+		solo.clickOnScreen(366, 314);
 		Thread.sleep(35000);
 		solo.takeScreenshot(testCaseName + "_D");
+		Thread.sleep(10000);
+		solo.clickOnScreen(366, 314);
+		Thread.sleep(35000);
+		solo.takeScreenshot(testCaseName + "_E");
+//		FileReadWrite.writeToSDFile("b",true);
+		
+		FileReadWrite.writeToSDFile(testCaseName + ";" + 
+									testCaseName + "_A" + ";" +
+									testCaseName + "_B" + ";" +
+									testCaseName + "_C" + ";" +
+									testCaseName + "_D" + ";" +
+									testCaseName + "_E" + ";",false);
 		
 		}
 		
@@ -173,6 +188,12 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 			Thread.sleep(35000);
 			solo.takeScreenshot(testCaseName +"_D");
 			
+			FileReadWrite.writeToSDFile(testCaseName + ";" + 
+										testCaseName + "_A" + ";" +
+										testCaseName + "_B" + ";" +
+										testCaseName + "_C" + ";" +
+										testCaseName + "_D" + ";" ,true);
+
 		}
 
 		
