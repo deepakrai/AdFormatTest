@@ -141,23 +141,33 @@ public class InMobiTest  extends ActivityInstrumentationTestCase2  {
 		solo.clickOnText("Load Banner");
 		Thread.sleep(10000);
 		solo.takeScreenshot(testCaseName + "_B");
-		Thread.sleep(15000);
+		Thread.sleep(35000);
 		solo.takeScreenshot(testCaseName + "_C");
+		Log.d("click", "Banner1");
 		solo.clickOnScreen(366, 314);
 		Thread.sleep(35000);
 		solo.takeScreenshot(testCaseName + "_D");
+		Log.d("click", "Banner");
+		Thread.sleep(35000);
+		solo.clickOnScreen(366, 314);
+		
+		Thread.sleep(35000);
+		Log.d("click", "Int");
+		solo.takeScreenshot(testCaseName + "_E");
 		Thread.sleep(10000);
 		solo.clickOnScreen(366, 314);
+		Log.d("click", "Land");
 		Thread.sleep(35000);
-		solo.takeScreenshot(testCaseName + "_E");
-//		FileReadWrite.writeToSDFile("b",true);
+		solo.takeScreenshot(testCaseName + "_F");
+		Thread.sleep(10000);
 		
 		FileReadWrite.writeToSDFile(testCaseName + ";" + 
 									testCaseName + "_A" + ";" +
 									testCaseName + "_B" + ";" +
 									testCaseName + "_C" + ";" +
 									testCaseName + "_D" + ";" +
-									testCaseName + "_E" + ";",false);
+									testCaseName + "_E" + ";" +
+									testCaseName + "_F",false);
 		
 		}
 		
